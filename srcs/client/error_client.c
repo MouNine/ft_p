@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isspace.c                                       :+:      :+:    :+:   */
+/*   error_client.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/07 16:38:23 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/04/23 12:18:05 by eboeuf           ###   ########.fr       */
+/*   Created: 2015/04/24 08:15:31 by eboeuf            #+#    #+#             */
+/*   Updated: 2015/04/24 10:39:48 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/libft.h"
+#include "../../includes/client.h"
 
-int		ft_isspace(int c)
+void    error_display(char *s)
 {
-	if (c == ' ' || (c >= 9 && c <= 13))
-		return (1);
-	else
-		return (0);
+        write(2, s, ft_strlen(s));
+        write(2, "\n", 1);
+        exit(-1);
 }

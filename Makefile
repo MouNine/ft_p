@@ -6,7 +6,7 @@
 #    By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/02/09 14:23:06 by eboeuf            #+#    #+#              #
-#    Updated: 2015/03/19 15:41:29 by eboeuf           ###   ########.fr        #
+#    Updated: 2015/04/24 10:41:07 by eboeuf           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,9 +14,20 @@ NAME_S		=	server
 
 NAME_C		=	client
 
-SRC_S 		=	server.c
+SRC 		=	srcs/
 
-SRC_C		=	client.c
+SRC_S       =   $(SRC)server/server.c \
+				$(SRC)server/ft_get.c \
+				$(SRC)server/ft_receive_client.c \
+				$(SRC)server/error_server.c \
+				$(SRC)server/ft_cd.c \
+				$(SRC)server/ft_ls.c \
+				$(SRC)server/ft_pwd.c
+
+SRC_C       =   $(SRC)client/client.c \
+				$(SRC)client/ft_put.c \
+				$(SRC)client/ft_receive_serv.c \
+				$(SRC)client/error_client.c
 
 OBJ_S 		=	$(SRC_S:.c=.o)
 
