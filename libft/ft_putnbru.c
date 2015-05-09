@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put.c                                           :+:      :+:    :+:   */
+/*   ft_putnbru.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eboeuf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/04/16 11:55:46 by eboeuf            #+#    #+#             */
-/*   Updated: 2014/04/16 11:55:46 by eboeuf           ###   ########.fr       */
+/*   Created: 2015/05/08 08:15:10 by eboeuf            #+#    #+#             */
+/*   Updated: 2015/05/08 08:15:47 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int	ft_putnbru(unsigned int n, int b)
+int		ft_putnbru(unsigned int n, int b)
 {
 	if (b == 'u')
 		b = 10;

@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 10:50:18 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/03/26 12:00:37 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/08 10:23:43 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void			*ft_memccpy(void *dest, const void *src, int c, size_t n);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
+int				ft_sizei(char *s);
 size_t			ft_strlen(const char *src);
 int				ft_strstrlen(char **s);
 char			*ft_strdup(const char *src);
@@ -52,7 +53,6 @@ int				ft_toupper(int c);
 int				ft_tolower(int c);
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
-int			    ft_sizei(char *s);
 char			*ft_strnew(size_t size);
 void			ft_strdel(char **as);
 void			ft_strclr(char *s);
@@ -68,17 +68,17 @@ char			*ft_joinfree(char *s1, char *s2, int free_str);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
-int			    ft_printf(const char *s, ...);
-void			ft_putchar(char c);
-void			ft_putstr(char const *s);
+int				ft_printf(const char *s, ...);
+int				ft_putchar(char c);
+int				ft_putstr(char const *s);
 void			ft_putendl(char const *s);
-void			ft_putnbr(int n);
-int             ft_putnbru(unsigned int n, int b);
+int				ft_putnbr(int n);
+int				ft_putnbru(unsigned int n, int b);
 void			ft_putchar_fd(char c, int fd);
 void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
-int             ft_putpoint(long unsigned int n);
+int				ft_putpoint(long unsigned int n);
 int				get_next_line(int const fd, char **line);
 
 #endif

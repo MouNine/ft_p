@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put.c                                           :+:      :+:    :+:   */
+/*   ft_putpoint.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
+/*   By: eboeuf <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/04/16 11:55:46 by eboeuf            #+#    #+#             */
-/*   Updated: 2014/04/16 11:55:46 by eboeuf           ###   ########.fr       */
+/*   Created: 2015/05/08 08:16:18 by eboeuf            #+#    #+#             */
+/*   Updated: 2015/05/08 10:22:35 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-int	ft_putpoint(long unsigned int n)
+int		ft_putpoint(long unsigned int n)
 {
 	if (n < 16)
 	{

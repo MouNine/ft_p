@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 11:57:20 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/04/24 10:40:44 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/08 08:46:12 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
 # include <sys/stat.h>
 # include <sys/types.h>
 # include "../libft/includes/libft.h"
-#include <stdio.h>
 
 typedef struct	s_file
 {

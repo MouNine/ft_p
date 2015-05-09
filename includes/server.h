@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 11:57:40 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/04/24 10:40:38 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/08 10:19:07 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,10 @@
 # include <sys/socket.h>
 # include <sys/types.h>
 # include "../libft/includes/libft.h"
-#include <stdio.h>
 
 typedef struct	s_file
 {
-	int 		len;
+	int			len;
 	char		data[1024];
 	char		buff[4096];
 }				t_file;

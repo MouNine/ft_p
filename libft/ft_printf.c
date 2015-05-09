@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/04/16 11:55:46 by eboeuf            #+#    #+#             */
-/*   Updated: 2014/04/16 11:55:46 by eboeuf           ###   ########.fr       */
+/*   Created: 2015/05/08 08:12:59 by eboeuf            #+#    #+#             */
+/*   Updated: 2015/05/08 08:37:21 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 #include <stdarg.h>
 
-static char	ft_flag(char flag)
+static char			ft_flag(char flag)
 {
 	if (flag == '-' || flag == '+' || flag == '#' || flag == '0' || flag == ' ')
 		return (flag);
@@ -21,9 +21,9 @@ static char	ft_flag(char flag)
 		return (0);
 }
 
-static int	ft_arg(char c, va_list ap, char flag)
+static int			ft_arg(char c, va_list ap, char flag)
 {
-	char	*s;
+	char			*s;
 
 	flag = ft_flag(flag);
 	if (c == 'c')
@@ -45,12 +45,12 @@ static int	ft_arg(char c, va_list ap, char flag)
 		return (ft_putchar(c));
 }
 
-int			ft_printf(const char *s, ...)
+int					ft_printf(const char *s, ...)
 {
-	va_list	ap;
-	int		i;
-	int		result;
-	char	flag;
+	va_list			ap;
+	int				i;
+	int				result;
+	char			flag;
 
 	i = 0;
 	result = 0;

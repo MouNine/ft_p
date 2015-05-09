@@ -6,13 +6,17 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/04/14 15:43:47 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/01/26 13:54:47 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/08 08:31:24 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/libft.h"
 
-void		ft_putstr(char const *s)
+int			ft_putstr(char const *s)
 {
-	write(1, s, ft_strlen(s));
+	int		i;
+
+	i = ft_strlen(s);
+	write(1, s, i);
+	return (i);
 }

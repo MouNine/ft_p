@@ -6,7 +6,7 @@
 #    By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2013/11/22 18:46:53 by eboeuf            #+#    #+#              #
-#    Updated: 2015/03/26 12:01:09 by eboeuf           ###   ########.fr        #
+#    Updated: 2015/05/08 08:44:06 by eboeuf           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS =		ft_memset.c \
 			ft_memmove.c \
 			ft_memchr.c \
 			ft_memcmp.c \
-			ft_sizei.c
+			ft_sizei.c \
 			ft_strlen.c \
 			ft_strdup.c \
 			ft_strcpy.c \
