@@ -6,15 +6,15 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/24 08:15:31 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/04/24 10:39:48 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/08 11:47:44 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/client.h"
 
-void    error_display(char *s)
+void	error_display(char *s)
 {
-        write(2, s, ft_strlen(s));
-        write(2, "\n", 1);
-        exit(-1);
+	write(2, s, ft_strlen(s));
+	write(2, "\n", 1);
+	exit(-1);
 }
