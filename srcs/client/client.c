@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 12:02:12 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/05/08 11:47:17 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/14 08:39:39 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ static int					ft_func(int ret, char *data, int sock)
 	char					pwd[4096];
 
 	getcwd(pwd, 4096);
-	if ((ret = read(0, data, 1023)) > 1)
+	if ((ret = read(0, data, 1023)) > 0)
 	{
 		data[ret - 1] = '\0';
 		if ((send(sock, data, 1023, 0)) < 0)
@@ -69,14 +69,15 @@ static int					ft_func(int ret, char *data, int sock)
 		else if (!ft_strncmp(data, "get", 3))
 			ft_receive_server(sock);
 		else if (!ft_strncmp(data, "put", 3))
-			ft_put(data + 4, sock, pwd);
+			ft_put(data + 4, sock);
 		else
 		{
 			wait_ret(sock);
 			ft_bzero(data, 1024);
 		}
+		return (1);
 	}
-	return (1);
+	return (0);
 }
 
 int							main(int ac, char **av)
@@ -94,7 +95,7 @@ int							main(int ac, char **av)
 		error_display("ERROR sock");
 	while (1)
 	{
-		ft_putstr("\x1B[31mft_p> \x1B[0m");
+		ft_putstr("\x1B[31mClient ft_p> \x1B[0m");
 		ft_func(ret, data, sock);
 	}
 	close(sock);

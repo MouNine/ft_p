@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 11:57:40 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/05/08 10:19:07 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/11 13:11:39 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ typedef struct	s_file
 int				ft_pwd(int cs);
 int				ft_ls(int cs);
 int				ft_cd(char *data, int cs, char *pwd);
-void			ft_get(char *data, int cs, char *pwd);
+void			ft_get(char *data, int cs);
 void			ft_receive_client(int cs);
 
 void			error_display(char *s);

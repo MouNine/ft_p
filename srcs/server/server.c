@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/16 12:01:15 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/05/08 12:17:29 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/11 13:15:37 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ static void						ft_command(char *data, int cs, char *pwd)
 	else if (!ft_strncmp(data, "pwd", 3))
 		ft_pwd(cs);
 	else if (!ft_strncmp(data, "get ", 4))
-		ft_get(data + 4, cs, pwd);
+		ft_get(data + 4, cs);
 	else if (!ft_strncmp(data, "put ", 4))
 		ft_receive_client(cs);
 	else if (!ft_strncmp(data, "quit", 4))
@@ -69,7 +69,7 @@ static void						fork_child(int cs)
 	getcwd(pwd, 4096);
 	while ((ret = recv(cs, data, 1024, 0)) > 0)
 	{
-		data[ret - 1] = '\0';
+		data[ret] = '\0';
 		ft_printf("[%d] \x1B[33mreceived %d bytes: [%s]\x1B[0m\n",
 				cs, ret, data);
 		ft_command(data, cs, pwd);

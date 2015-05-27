@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/24 10:13:11 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/05/08 13:47:10 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/11 09:38:58 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,20 @@ static int			ft_rec_fd(char *file)
 
 	fd = open(file, O_RDWR | O_TRUNC | O_CREAT, 00644);
 	if (fd == -1)
-		error_display("ERROR Can't open file");
+		ft_putendl_fd("ERROR Can't open file", 2);
 	return (fd);
 }
 
-static void			ft_write(t_file *file, int fd)
+static int			ft_read(t_file *file, int *fd)
 {
-	file = (t_file *)buff;
-	if (!ft_strcmp(file->data, "END")
-		break ;
+	if (!ft_strcmp(file->data, "END"))
+		return (1);
 	else if (!ft_strcmp(file->data, "ERROR"))
-	{
-		ft_putendl_fd("ERROR ", 2);
-		return ;
-	}
-	else if (fd == 0)
-		fd = ft_rec_fd(file->data);
-	write(fd, file->buff, file->len);
-	ft_bzero(buff, sizeof(t_file));
+		error_display("ERROR Don't know file");
+	else if (*fd == 0)
+		*fd = ft_rec_fd(file->data);
+	write(*fd, file->buff, file->len);
+	return (0);
 }
 
 void				ft_receive_server(int cs)
@@ -52,16 +48,8 @@ void				ft_receive_server(int cs)
 		if ((ret = recv(cs, buff, sizeof(t_file), 0)) > 0)
 		{
 			file = (t_file *)buff;
-			if (!ft_strcmp(file->data, "END")
+			if (ft_read(file, &fd_new) == 1)
 				break ;
-			else if (!ft_strcmp(file->data, "ERROR"))
-			{
-				ft_putendl_fd("ERROR ", 2);
-				return ;
-			}
-			else if (fd_new == 0)
-				fd_new = ft_rec_fd(file->data);
-			write(fd, file->buff, file->len);
 			ft_bzero(buff, sizeof(t_file));
 		}
 		else if (ret == -1)

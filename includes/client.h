@@ -6,7 +6,7 @@
 /*   By: eboeuf <eboeuf@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/04/04 11:57:20 by eboeuf            #+#    #+#             */
-/*   Updated: 2015/05/08 08:46:12 by eboeuf           ###   ########.fr       */
+/*   Updated: 2015/05/11 13:14:59 by eboeuf           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CLIENT_H
 
 # include <arpa/inet.h>
+# include <dirent.h>
 # include <fcntl.h>
 # include <netdb.h>
 # include <netinet/in.h>
@@ -30,7 +31,7 @@ typedef struct	s_file
 }				t_file;
 
 void			ft_receive_server(int cs);
-void			ft_put(char *data, int cs, char *pwd);
+void			ft_put(char *data, int cs);
 
 void			error_display(char *s);
 
